@@ -16,8 +16,10 @@
     "pug": "^2.0.0-rc.2"
   },
   "devDependencies": {
+    "babelify": "^7.3.0",
+    "browserify": "^14.4.0",
     "gulp": "^3.9.1",
-    "gulp-sass": "^3.1.0",
-    "gulp-rename": "^1.2.2"
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0"
   }
 }
