@@ -3,6 +3,7 @@ let sass = require('gulp-sass')
 let rename = require('gulp-rename')
 let babel = require('babelify')
 let browserify = require('browserify')
+let source = require('vinyl-source-stream')
 
 gulp.task('styles',function(){
 	gulp
@@ -22,7 +23,9 @@ gulp.task('scripts',function(){
 	browserify('./src/index.js')
 		.transform(babel)
 		.bundle()
-		.pipe()
+		.pipe(source('index.js'))
+		.pipe(rename('app.js'))
+		.pipe(gulp.dest('public'))
 })
 
-gulp.task('default',['styles','assets'])
+gulp.task('default',['styles','assets','scripts'])
